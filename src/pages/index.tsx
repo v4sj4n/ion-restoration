@@ -23,9 +23,8 @@ export default function IndexPage() {
 				<div className="flex gap-3">
 					<Link
 						className={buttonStyles({
-							color: "primary",
 							radius: "full",
-							variant: "flat",
+							variant: "solid",
 						})}
 						href={siteConfig.navMenuItems[1].href}
 					>

@@ -4,7 +4,7 @@ import { type SwitchProps, useSwitch } from "@nextui-org/switch"
 import clsx from "clsx"
 
 import { useTheme } from "@/hooks/use-theme"
-import { SunFilledIcon, MoonFilledIcon } from "@/components/icons"
+import { Moon, Sun } from "@phosphor-icons/react"
 
 export interface ThemeSwitchProps {
   className?: string
@@ -35,7 +35,7 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
 
   useEffect(() => {
     setIsMounted(true)
-  }, [isMounted])
+  }, [])
 
   if (!isMounted) return <div className="w-6 h-6" />
 
@@ -73,9 +73,9 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
         })}
       >
         {isSelected ? (
-          <MoonFilledIcon size={22} />
+          <Moon size={22} />
         ) : (
-          <SunFilledIcon size={22} />
+          <Sun size={22} />
         )}
       </div>
     </Component>
