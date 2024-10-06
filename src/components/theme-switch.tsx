@@ -1,25 +1,25 @@
-import { FC, useState, useEffect } from "react";
-import { VisuallyHidden } from "@react-aria/visually-hidden";
-import { SwitchProps, useSwitch } from "@nextui-org/switch";
-import clsx from "clsx";
+import { type FC, useState, useEffect } from "react"
+import { VisuallyHidden } from "@react-aria/visually-hidden"
+import { type SwitchProps, useSwitch } from "@nextui-org/switch"
+import clsx from "clsx"
 
-import { useTheme } from "@/hooks/use-theme";
-import { SunFilledIcon, MoonFilledIcon } from "@/components/icons";
+import { useTheme } from "@/hooks/use-theme"
+import { SunFilledIcon, MoonFilledIcon } from "@/components/icons"
 
 export interface ThemeSwitchProps {
-  className?: string;
-  classNames?: SwitchProps["classNames"];
+  className?: string
+  classNames?: SwitchProps["classNames"]
 }
 
 export const ThemeSwitch: FC<ThemeSwitchProps> = ({
   className,
   classNames,
 }) => {
-  const [isMounted, setIsMounted] = useState(false);
+  const [isMounted, setIsMounted] = useState(false)
 
-  const { theme, toggleTheme } = useTheme();
+  const { theme, toggleTheme } = useTheme()
 
-  const onChange = toggleTheme;
+  const onChange = toggleTheme
 
   const {
     Component,
@@ -31,14 +31,13 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
   } = useSwitch({
     isSelected: theme === "light",
     onChange,
-  });
+  })
 
   useEffect(() => {
-    setIsMounted(true);
-  }, [isMounted]);
+    setIsMounted(true)
+  }, [isMounted])
 
-  // Prevent Hydration Mismatch
-  if (!isMounted) return <div className="w-6 h-6" />;
+  if (!isMounted) return <div className="w-6 h-6" />
 
   return (
     <Component
@@ -47,7 +46,7 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
         className: clsx(
           "px-px transition-opacity hover:opacity-80 cursor-pointer",
           className,
-          classNames?.base,
+          classNames?.base
         ),
       })}
     >
@@ -69,7 +68,7 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
               "px-0",
               "mx-0",
             ],
-            classNames?.wrapper,
+            classNames?.wrapper
           ),
         })}
       >
@@ -80,5 +79,5 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
         )}
       </div>
     </Component>
-  );
-};
+  )
+}
