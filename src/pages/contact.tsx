@@ -14,39 +14,53 @@ export default function Contact() {
           </h1>
 
           <div className="grid grid-cols-1 md:grid-cols-5 md:gap-8 gap-y-4  mt-8">
-            <form className=" col-span-1 md:col-span-3 grid grid-cols-1 sm:grid-cols-2 gap-y-4 md:gap-4">
-              <h3 className={`col-span-full ${subtitle()}`}>Fill this form</h3>
-              <Input type="text" label="First Name" variant="bordered" />
-              <Input type="text" label="Last Name" variant="bordered" />
+            <form className=" col-span-1 md:col-span-3  grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
+              <h3 className={` md:col-span-2 ${subtitle()}`}>Fill this form</h3>
+              <Input
+                type="text"
+                label="First Name"
+                variant="bordered"
+                className="w-full"
+              />
+              <Input
+                type="text"
+                label="Last Name"
+                variant="bordered"
+                className="w-full"
+              />
               <Input
                 type="email"
                 label="Email"
                 variant="bordered"
-                className="col-span-full"
+                className="w-full"
               />
               <Input
                 type="text"
                 label="Phone"
                 variant="bordered"
                 startContent={<span className="text-sm">+1</span>}
-                className="col-span-full"
+                className="w-full"
               />
               <Input
                 type="text"
                 label="Your address"
                 variant="bordered"
-                className="col-span-full"
+                className="md:col-span-2"
               />
               <Textarea
                 minRows={3}
                 label="Problem"
                 variant="bordered"
                 placeholder="Describe your problem"
-                className="col-span-full"
+                className="md:col-span-2"
               />
-              <div className="col-span-2 flex gap-2 justify-end">
-                <Button variant="faded">Clear</Button>
-                <Button color="primary">Submit</Button>
+              <div className="md:col-span-2 flex gap-2 justify-end">
+                <Button fullWidth variant="faded">
+                  Clear
+                </Button>
+                <Button fullWidth color="primary">
+                  Submit
+                </Button>
               </div>
             </form>
             <div className="col-span-2">

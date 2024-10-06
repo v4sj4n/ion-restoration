@@ -13,7 +13,7 @@ export default function DefaultLayout({
     if (pathname !== "/") {
       document.title = `${pathname[1].toUpperCase() + pathname.slice(2)} | Ion Restoration`
     } else {
-      document.title = `Home | Ion Restoration`
+      document.title = "Home | Ion Restoration"
     }
   }, [pathname])
   return (
